@@ -152,9 +152,10 @@ export default class SortableList extends Component {
     if (data && prevData && !shallowEqual(data, prevData)) {
       this._onUpdateLayouts();
     }
-    if (prevProps.scrollEnabled !== scrollEnabled) {
-      this.setState({scrollEnabled: prevProps.scrollEnabled})
-    }
+    // fix for android scrolling
+    //     if (prevProps.scrollEnabled !== scrollEnabled) {
+    //       this.setState({scrollEnabled: prevProps.scrollEnabled})
+    //     }
   }
 
   scrollBy({dx = 0, dy = 0, animated = false}) {
